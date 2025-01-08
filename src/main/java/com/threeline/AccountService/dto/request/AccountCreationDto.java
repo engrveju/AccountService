@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 
 public record AccountCreationDto(
-        String customerId,
+        Long customerId,
         BigDecimal initialCredit
 ) {
 }
