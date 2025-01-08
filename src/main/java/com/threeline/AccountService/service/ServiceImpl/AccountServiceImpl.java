@@ -4,6 +4,7 @@ import com.threeline.AccountService.TransactionType;
 import com.threeline.AccountService.dto.response.DefaultApiResponse;
 import com.threeline.AccountService.entity.Account;
 import com.threeline.AccountService.entity.Customer;
+import com.threeline.AccountService.entity.Transaction;
 import com.threeline.AccountService.repository.AccountRepository;
 import com.threeline.AccountService.service.AccountService;
 import com.threeline.AccountService.service.CustomerService;

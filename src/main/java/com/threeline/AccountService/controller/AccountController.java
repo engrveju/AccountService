@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountController {
     private final AccountService accountService;
 
-    @PostMapping("/create")
+    @PostMapping("/deposit")
     public ResponseEntity<?> createAccount(@RequestBody @Valid AccountCreationDto request) {
         return accountService.createAndFundAccount(request.customerId(),request.initialCredit());
     }

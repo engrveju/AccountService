@@ -1,6 +1,7 @@
 package com.threeline.AccountService.controller;
 
 
+import com.threeline.AccountService.dto.request.CustomerRegistrationRequest;
 import com.threeline.AccountService.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,5 +20,10 @@ public class CustomerController {
     @PostMapping("/details/{customerId}")
     public ResponseEntity<?> getCustomerDetails(@PathVariable Long customerId) {
         return customerService.getCustomerDetails(customerId);
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody @Validated CustomerRegistrationRequest request) {
+        return customerService.register(request);
     }
 }

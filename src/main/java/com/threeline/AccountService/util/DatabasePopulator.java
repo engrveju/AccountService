@@ -1,6 +1,5 @@
 package com.threeline.AccountService.util;
 
-import com.threeline.AccountService.entity.Account;
 import com.threeline.AccountService.entity.Customer;
 import com.threeline.AccountService.repository.CustomerRepository;
 import jakarta.annotation.PostConstruct;
@@ -20,12 +19,14 @@ public class DatabasePopulator {
             Customer customer1 = Customer.builder()
                     .name("Emma")
                     .surname("Ugwueze")
+                    .email("emma@gmail.com")
                     .build();
             customerRepository.save(customer1);
 
             Customer customer2 = Customer.builder()
                     .name("Jideofor")
                     .surname("Eze")
+                    .email("jide@gmail.com")
                     .build();
             customerRepository.save(customer2);
         }

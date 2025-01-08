@@ -25,8 +25,20 @@ public class CustomerServiceImpl implements CustomerService {
     private final AccountRepository accountRepository;
 
     @Override
-    public Customer register(CustomerRegistrationRequest request) {
-        return null;
+    public ResponseEntity<?> register(CustomerRegistrationRequest request) {
+        if(customerRepository.existsByEmail(request.email())){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(AppUtils.defaultErrorResponse("Customer Already Exists"));
+
+        }
+
+        Customer customer = Customer.builder()
+                .name(request.name())
+                .surname(request.surName())
+                .email(request.email())
+                .build();
+        customer = customerRepository.save(customer);
+        return ResponseEntity.status(HttpStatus.OK).body(AppUtils.defaultSuccessResponse(customer));
+
     }
 
     @Override
